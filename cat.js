@@ -5,8 +5,11 @@ const fs = require('fs')
 
 
 
-module.exports = function () {
-    fs.readFile() 
+module.exports = function (fName) {
+    fs.readFile(fName, (err, data) => {
+        if (err) throw err;
+        process.stdout.write(data);
+      });
 }
 
 
